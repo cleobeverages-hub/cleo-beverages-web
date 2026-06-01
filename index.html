@@ -1,8 +1,191 @@
-Cleo Beverages | Purity Reigns
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleo Beverages | Purity Reigns</title>
+    <style>
+        :root {
+            --primary-color: #0c1c4f; /* A deep, rich navy */
+            --secondary-color: #0a4f91; /* A brighter accent blue */
+            --background-color: #fcfcfc;
+            --text-color: #333;
+            --card-background: #ffffff;
+            --border-radius: 8px;
+        }
 
+        body { 
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
 
-    
-        Cleo Beverages
-        Purity Reigns
-        Our new website is under construction..
+        /* Basic Layout & Containers */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background-color: var(--card-background);
+            border-bottom: 1px solid #eaeaea;
+            padding: 1.5rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem 0;
+        }
+
+        .hero h1 { 
+            color: var(--primary-color); 
+            font-size: 3.5rem; 
+            margin-bottom: 0.1em; 
+        }
+
+        .hero h2 { 
+            font-weight: 300; 
+            color: var(--secondary-color); 
+            margin-top: 0; 
+            font-size: 1.8rem;
+        }
+
+        /* Content Sections */
+        .main-content {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap; /* for responsiveness */
+        }
+
+        .card {
+            background-color: var(--card-background);
+            padding: 2rem;
+            flex: 1 1 calc(50% - 2rem); /* 2 columns, adjust for gap */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: var(--border-radius);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Details List */
+        .contact-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-details li {
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-details li strong {
+            display: inline-block;
+            width: 80px;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f1f1f1;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid #eaeaea;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.4rem; }
+            .main-content { flex-direction: column; }
+            .card { flex: 1 1 100%; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="brand-logo">Cleo Beverages</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Cleo Beverages</h1>
+            <h2>Purity Reigns</h2>
+            <p>Our commitment to excellence in every drop.</p>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="main-content">
+            
+            <!-- Information Card -->
+            <div class="card info-card">
+                <h3>About Our Vision</h3>
+                <p>Cleo Beverages is dedicated to sourcing and crafting the finest beverages. We prioritize purity, quality, and a refreshing experience in everything we produce. Our mission is to refresh and invigorate, adhering strictly to our promise: Purity Reigns.</p>
+                <p>Stay tuned as we fully launch our new online presence.</p>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="card contact-card contact-details">
+                <h3>Our Location</h3>
+                <p>You can find our headquarters and primary bottling facility at:</p>
+                <ul>
+                    <li><strong>City:</strong> [Your City Name]</li>
+                    <li><strong>Country:</strong> [Your Country Name]</li>
+                </ul>
+                <p>For inquiries, please contact us at: <strong>[Your Contact Email]</strong></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Simple Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Cleo Beverages. All rights reserved.</p>
+            <p><strong>Purity Reigns.</strong></p>
+        </div>
+    </footer>
+
+</body>
+</html>
