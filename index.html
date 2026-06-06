@@ -5,186 +5,248 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cleo Beverages | Purity Reigns</title>
     <style>
+        /* CSS Variables for consistent branding */
         :root {
-            --primary-color: #0c1c4f; /* A deep, rich navy */
-            --secondary-color: #0a4f91; /* A brighter accent blue */
-            --background-color: #fcfcfc;
-            --text-color: #333;
-            --card-background: #ffffff;
-            --border-radius: 8px;
+            --primary-blue: #005A9C;
+            --light-blue: #E6F2FF;
+            --accent-blue: #00A8E8;
+            --text-dark: #2C3E50;
+            --text-light: #F8F9FA;
+            --white: #FFFFFF;
         }
 
-        body { 
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
-            margin: 0; 
+        /* Global Styles */
+        body, html {
+            margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
+            scroll-behavior: smooth;
         }
 
-        /* Basic Layout & Containers */
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 0;
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 600;
         }
 
-        /* Header / Hero Section */
-        header {
-            background-color: var(--card-background);
-            border-bottom: 1px solid #eaeaea;
-            padding: 1.5rem 0;
-        }
-
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1.5rem 5%;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .brand-logo {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 0 3rem 0;
-        }
-
-        .hero h1 { 
-            color: var(--primary-color); 
-            font-size: 3.5rem; 
-            margin-bottom: 0.1em; 
-        }
-
-        .hero h2 { 
-            font-weight: 300; 
-            color: var(--secondary-color); 
-            margin-top: 0; 
+        .logo {
             font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            opacity: 0.9;
         }
 
         /* Content Sections */
-        .main-content {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap; /* for responsiveness */
+        .section {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .section-light {
+            background-color: var(--light-blue);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            display: block;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid Layouts */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .card {
-            background-color: var(--card-background);
-            padding: 2rem;
-            flex: 1 1 calc(50% - 2rem); /* 2 columns, adjust for gap */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-radius: var(--border-radius);
-            border-top: 4px solid var(--primary-color);
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .card h3 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
-        /* Contact Details List */
-        .contact-details ul {
-            list-style: none;
-            padding: 0;
+        /* Leadership Section */
+        .leadership-box {
+            text-align: center;
+            padding: 20px;
         }
 
-        .contact-details li {
-            margin-bottom: 0.8rem;
+        .leadership-box h4 {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
         }
 
-        .contact-details li strong {
-            display: inline-block;
-            width: 80px;
-            color: var(--primary-color);
+        .leadership-box p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 0;
         }
 
         /* Footer */
         footer {
-            background-color: #f1f1f1;
-            padding: 2rem 0;
+            background-color: var(--text-dark);
+            color: var(--text-light);
             text-align: center;
-            margin-top: 4rem;
-            border-top: 1px solid #eaeaea;
+            padding: 40px 20px;
         }
 
         footer p {
-            margin: 0.5rem 0;
-            color: #666;
-            font-size: 0.9rem;
+            margin: 5px 0;
+            opacity: 0.8;
         }
 
-        /* Responsiveness for smaller screens */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero h2 { font-size: 1.4rem; }
-            .main-content { flex-direction: column; }
-            .card { flex: 1 1 100%; }
+            .hero h1 { font-size: 3rem; }
+            .hero h2 { font-size: 1.5rem; }
+            .nav-links { display: none; /* Simple mobile hide for now */ }
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="brand-logo">Cleo Beverages</a>
-            </nav>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Cleo Beverages</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#quality">Quality</a>
+            <a href="#leadership">Leadership</a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content Area -->
-    <div class="container">
-        
-        <!-- Hero Section -->
-        <div class="hero">
-            <h1>Cleo Beverages</h1>
-            <h2>Purity Reigns</h2>
-            <p>Our commitment to excellence in every drop.</p>
-        </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Cleo Beverages</h1>
+        <h2>Purity Reigns</h2>
+        <p>Premium packaged drinking water, processed with state-of-the-art infrastructure to deliver unparalleled refreshment and safety in every drop.</p>
+    </section>
 
-        <!-- Details Grid -->
-        <div class="main-content">
-            
-            <!-- Information Card -->
-            <div class="card info-card">
-                <h3>About Our Vision</h3>
-                <p>Cleo Beverages is dedicated to sourcing and crafting the finest beverages. We prioritize purity, quality, and a refreshing experience in everything we produce. Our mission is to refresh and invigorate, adhering strictly to our promise: Purity Reigns.</p>
-                <p>Stay tuned as we fully launch our new online presence.</p>
+    <!-- Quality & Infrastructure Section -->
+    <section id="quality" class="section">
+        <h2 class="section-title">Uncompromising Quality</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Advanced RO Systems</h3>
+                <p>Our manufacturing plant is equipped with multi-stage Reverse Osmosis (RO) machinery, ensuring the complete eradication of impurities while retaining essential minerals.</p>
             </div>
-
-            <!-- Contact Card -->
-            <div class="card contact-card contact-details">
-                <h3>Our Location</h3>
-                <p>You can find our headquarters and primary bottling facility at:</p>
-                <ul>
-                    <li><strong>City:</strong> [Your City Name]</li>
-                    <li><strong>Country:</strong> [Your Country Name]</li>
-                </ul>
-                <p>For inquiries, please contact us at: <strong>[Your Contact Email]</strong></p>
+            <div class="card">
+                <h3>FSSAI Compliant</h3>
+                <p>We adhere to the strictest regulatory standards. Our facility, processes, and final products undergo rigorous testing to ensure full FSSAI compliance and consumer safety.</p>
             </div>
-
+            <div class="card">
+                <h3>Hygienic Packaging</h3>
+                <p>From automated rinsing and filling to capping and labeling, our end-to-end packaging process minimizes human contact to guarantee absolute purity.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Simple Footer -->
+    <!-- Leadership Section -->
+    <section id="leadership" class="section section-light">
+        <h2 class="section-title">Our Management</h2>
+        <div class="grid-container" style="max-width: 800px;">
+            <div class="card leadership-box">
+                <h4>Poonam Choudhary</h4>
+                <p>Proprietor</p>
+                <p style="margin-top: 15px; color: var(--text-dark);">Guiding the vision and strategic growth of Cleo Beverages with a commitment to industry excellence.</p>
+            </div>
+            <div class="card leadership-box">
+                <h4>Dilip Kumar Choudhary</h4>
+                <p>Quality Control Head</p>
+                <p style="margin-top: 15px; color: var(--text-dark);">Overseeing all technical operations, plant machinery, and rigorous water analysis to ensure every batch meets our high standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2023 Cleo Beverages. All rights reserved.</p>
-            <p><strong>Purity Reigns.</strong></p>
-        </div>
+        <p>&copy; 2026 Cleo Beverages. All rights reserved.</p>
+        <p>Purity Reigns.</p>
     </footer>
 
 </body>
