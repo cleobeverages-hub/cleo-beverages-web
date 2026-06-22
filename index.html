@@ -1,377 +1,784 @@
-<!DOCTYPE html>
-<html lang="en">
+ 
+Action: file_editor create /app/cleo-site/index.html --file-text "<!doctype html>
+<html lang=\"en\">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cleo Beverages | Purity Reigns</title>
-    <!-- Import Google Fonts for a modern, corporate look -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --brand-primary: #008080; /* A fresh teal/water green */
-            --brand-secondary: #004D4D; /* Deep teal */
-            --brand-blue: #0066CC;
-            --text-dark: #333333;
-            --text-light: #FFFFFF;
-            --bg-light: #F4F9F9;
-        }
+<meta charset=\"utf-8\" />
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\" />
+<meta name=\"theme-color\" content=\"#053b3a\" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>CLEO Beverages — Premium Packaged Drinking Water | Darbhanga, Bihar</title>
+<meta name=\"description\" content=\"CLEO Beverages crafts premium packaged drinking water in Darbhanga, Bihar. Multi-stage purification, FSSAI compliant, trusted by hotels, hospitals, institutions and distributors across India.\" />
+<meta name=\"keywords\" content=\"CLEO Beverages, packaged drinking water Darbhanga, mineral water Bihar, water distributor Bihar, bulk water supplier, RO water manufacturer, FSSAI water\" />
+<meta name=\"author\" content=\"CLEO Beverages\" />
+<link rel=\"canonical\" href=\"https://cleobeverages.com/\" />
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+<!-- Open Graph -->
+<meta property=\"og:type\" content=\"website\" />
+<meta property=\"og:title\" content=\"CLEO Beverages — Premium Packaged Drinking Water\" />
+<meta property=\"og:description\" content=\"Pure. Premium. Pristine. Crafted in Darbhanga, Bihar — distributed across India.\" />
+<meta property=\"og:url\" content=\"https://cleobeverages.com/\" />
+<meta property=\"og:image\" content=\"https://cleobeverages.com/assets/images/og-cover.jpg\" />
+<meta property=\"og:site_name\" content=\"CLEO Beverages\" />
 
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-        }
+<!-- Twitter -->
+<meta name=\"twitter:card\" content=\"summary_large_image\" />
+<meta name=\"twitter:title\" content=\"CLEO Beverages — Premium Packaged Drinking Water\" />
+<meta name=\"twitter:description\" content=\"Pure. Premium. Pristine. Crafted in Darbhanga, Bihar.\" />
+<meta name=\"twitter:image\" content=\"https://cleobeverages.com/assets/images/og-cover.jpg\" />
 
-        /* Top Bar */
-        .top-bar {
-            background-color: var(--brand-secondary);
-            color: var(--text-light);
-            text-align: right;
-            padding: 8px 5%;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
+<!-- Icons -->
+<link rel=\"icon\" type=\"image/svg+xml\" href=\"assets/icons/favicon.svg\" />
+<link rel=\"apple-touch-icon\" href=\"assets/icons/apple-touch-icon.png\" />
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background-color: var(--text-light);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+<!-- Fonts: Editorial serif (Fraunces) + sans (Manrope) -->
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />
+<link href=\"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\" />
 
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--brand-primary);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+<!-- Lucide Icons -->
+<script src=\"https://unpkg.com/lucide@latest\" defer></script>
 
-        .nav-links a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
+<link rel=\"stylesheet\" href=\"css/style.css\" />
 
-        .nav-links a:hover {
-            color: var(--brand-primary);
-        }
-
-        /* Hero Image Section */
-        .hero {
-            position: relative;
-            height: 80vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 77, 77, 0.6)), url('https://images.unsplash.com/photo-1548839140-29a749e1abc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--brand-primary);
-            color: var(--text-light);
-            padding: 15px 40px;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border-radius: 30px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--brand-secondary);
-            transform: translateY(-2px);
-        }
-
-        /* Product Showcase */
-        .products {
-            padding: 80px 5%;
-            background-color: var(--bg-light);
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--brand-secondary);
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 50px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-card {
-            background: var(--text-light);
-            padding: 40px 20px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .bottle-placeholder {
-            width: 80px;
-            height: 200px;
-            background: linear-gradient(180deg, #E6F2FF 0%, #B3D9FF 100%);
-            margin: 0 auto 20px auto;
-            border-radius: 15px 15px 5px 5px;
-            position: relative;
-            border: 2px solid #99CCFF;
-        }
-
-        .bottle-placeholder::after {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 15px;
-            background-color: var(--brand-blue);
-            border-radius: 3px 3px 0 0;
-        }
-
-        .product-card h3 {
-            color: var(--brand-secondary);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        /* The Process Section */
-        .process {
-            padding: 80px 5%;
-            text-align: center;
-        }
-
-        .process-steps {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 40px auto 0 auto;
-        }
-
-        .step {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background-color: var(--brand-primary);
-            color: var(--text-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0 auto 20px auto;
-        }
-
-        .step h4 {
-            color: var(--brand-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1A1A1A;
-            color: #E0E0E0;
-            padding: 60px 5% 20px 5%;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-bottom: 1px solid #333;
-            padding-bottom: 40px;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-
-        .footer-text {
-            max-width: 300px;
-            font-size: 0.9rem;
-            color: #AAAAAA;
-        }
-
-        .copyright {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #777;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .nav-links { display: none; }
-        }
-    </style>
+<!-- Structured Data -->
+<script type=\"application/ld+json\">
+{
+  \"@context\": \"https://schema.org\",
+  \"@type\": \"Organization\",
+  \"name\": \"CLEO Beverages\",
+  \"url\": \"https://cleobeverages.com/\",
+  \"logo\": \"https://cleobeverages.com/assets/images/logo.png\",
+  \"description\": \"Premium packaged drinking water manufacturer based in Darbhanga, Bihar, India.\",
+  \"address\": {
+    \"@type\": \"PostalAddress\",
+    \"streetAddress\": \"{{FACTORY_ADDRESS}}\",
+    \"addressLocality\": \"Darbhanga\",
+    \"addressRegion\": \"Bihar\",
+    \"addressCountry\": \"IN\"
+  },
+  \"contactPoint\": {
+    \"@type\": \"ContactPoint\",
+    \"telephone\": \"{{PHONE}}\",
+    \"contactType\": \"customer service\",
+    \"areaServed\": \"IN\"
+  }
+}
+</script>
 </head>
-<body>
 
-    <div class="top-bar">
-        <span>ISO Certified | FSSAI Compliant Manufacturing</span>
+<body data-testid=\"page-body\">
+
+<!-- ============ PRELOADER ============ -->
+<div class=\"preloader\" id=\"preloader\" data-testid=\"preloader\">
+  <div class=\"preloader__inner\">
+    <div class=\"preloader__drop\"></div>
+    <span class=\"preloader__label\" data-testid=\"preloader-label\">CLEO</span>
+  </div>
+</div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class=\"nav\" id=\"nav\" data-testid=\"main-nav\">
+  <a href=\"#top\" class=\"nav__brand\" data-testid=\"nav-brand\" aria-label=\"CLEO Beverages home\">
+    <span class=\"nav__logo\">
+      <!-- LOGO PLACEHOLDER: replace /assets/images/logo.svg -->
+      <img src=\"assets/images/logo.svg\" alt=\"CLEO Beverages\" onerror=\"this.style.display='none'\" />
+      <span class=\"nav__wordmark\">CLEO</span>
+    </span>
+    <span class=\"nav__sub\">Beverages</span>
+  </a>
+
+  <nav class=\"nav__links\" aria-label=\"Primary\">
+    <a href=\"#about\" data-testid=\"nav-link-about\">About</a>
+    <a href=\"#products\" data-testid=\"nav-link-products\">Products</a>
+    <a href=\"#process\" data-testid=\"nav-link-process\">Process</a>
+    <a href=\"#quality\" data-testid=\"nav-link-quality\">Quality</a>
+    <a href=\"#facility\" data-testid=\"nav-link-facility\">Facility</a>
+    <a href=\"#b2b\" data-testid=\"nav-link-b2b\">B2B</a>
+    <a href=\"#partners\" data-testid=\"nav-link-partners\">Partners</a>
+    <a href=\"#contact\" data-testid=\"nav-link-contact\">Contact</a>
+  </nav>
+
+  <a href=\"#contact\" class=\"nav__cta\" data-testid=\"nav-cta\">
+    <span>Get in touch</span>
+    <i data-lucide=\"arrow-up-right\"></i>
+  </a>
+
+  <button class=\"nav__burger\" id=\"navBurger\" aria-label=\"Open menu\" data-testid=\"nav-burger\">
+    <span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile menu -->
+<div class=\"mobile-menu\" id=\"mobileMenu\" data-testid=\"mobile-menu\" aria-hidden=\"true\">
+  <div class=\"mobile-menu__inner\">
+    <a href=\"#about\" data-testid=\"mobile-link-about\">About</a>
+    <a href=\"#products\" data-testid=\"mobile-link-products\">Products</a>
+    <a href=\"#process\" data-testid=\"mobile-link-process\">Purification</a>
+    <a href=\"#quality\" data-testid=\"mobile-link-quality\">Quality</a>
+    <a href=\"#facility\" data-testid=\"mobile-link-facility\">Facility</a>
+    <a href=\"#b2b\" data-testid=\"mobile-link-b2b\">Bulk &amp; B2B</a>
+    <a href=\"#packaging\" data-testid=\"mobile-link-packaging\">Private Label</a>
+    <a href=\"#partners\" data-testid=\"mobile-link-partners\">Dealers</a>
+    <a href=\"#gallery\" data-testid=\"mobile-link-gallery\">Gallery</a>
+    <a href=\"#testimonials\" data-testid=\"mobile-link-testimonials\">Testimonials</a>
+    <a href=\"#contact\" data-testid=\"mobile-link-contact\">Contact</a>
+  </div>
+</div>
+
+<main id=\"top\">
+
+<!-- ============ HERO ============ -->
+<section class=\"hero\" data-testid=\"hero-section\">
+  <div class=\"hero__ambient\" aria-hidden=\"true\">
+    <div class=\"hero__ripple hero__ripple--1\"></div>
+    <div class=\"hero__ripple hero__ripple--2\"></div>
+    <div class=\"hero__ripple hero__ripple--3\"></div>
+  </div>
+
+  <div class=\"hero__grid\">
+    <div class=\"hero__copy\">
+      <div class=\"eyebrow\" data-reveal>
+        <span class=\"eyebrow__dot\"></span>
+        <span>Crafted in Darbhanga, Bihar · India</span>
+      </div>
+
+      <h1 class=\"hero__title\" data-testid=\"hero-title\">
+        <span data-reveal data-delay=\"0\">Water,</span>
+        <span data-reveal data-delay=\"80\" class=\"hero__title-italic\">refined to</span>
+        <span data-reveal data-delay=\"160\">a quiet</span>
+        <span data-reveal data-delay=\"240\" class=\"hero__title-accent\">brilliance.</span>
+      </h1>
+
+      <p class=\"hero__lede\" data-reveal data-delay=\"320\">
+        CLEO Beverages is a new generation packaged drinking water house — engineered through
+        six precise stages of purification, bottled with hospital-grade hygiene, and trusted by
+        homes, hotels, hospitals and institutions across India.
+      </p>
+
+      <div class=\"hero__cta-row\" data-reveal data-delay=\"420\">
+        <a href=\"#products\" class=\"btn btn--primary\" data-testid=\"hero-cta-explore\">
+          Explore the range
+          <i data-lucide=\"arrow-down-right\"></i>
+        </a>
+        <a href=\"#partners\" class=\"btn btn--ghost\" data-testid=\"hero-cta-partner\">
+          Become a partner
+        </a>
+      </div>
+
+      <ul class=\"hero__stats\" data-reveal data-delay=\"540\">
+        <li>
+          <strong data-testid=\"stat-stages\">06</strong>
+          <span>Purification stages</span>
+        </li>
+        <li>
+          <strong>FSSAI</strong>
+          <span>Compliant facility</span>
+        </li>
+        <li>
+          <strong>24×7</strong>
+          <span>Production uptime</span>
+        </li>
+      </ul>
     </div>
 
-    <nav>
-        <a href="#" class="logo">Cleo Beverages</a>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#products">Our Range</a>
-            <a href="#process">Quality Process</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+    <div class=\"hero__visual\" aria-hidden=\"true\">
+      <div class=\"hero__bottle\">
+        <!-- BOTTLE IMAGE PLACEHOLDER: drop product photo into /assets/images/hero-bottle.png -->
+        <img src=\"assets/images/hero-bottle.png\" alt=\"\" onerror=\"this.replaceWith(document.getElementById('bottle-svg').content.cloneNode(true))\" />
+      </div>
+      <div class=\"hero__chip hero__chip--tl\">
+        <i data-lucide=\"droplets\"></i>
+        <span>RO + UV + Ozone</span>
+      </div>
+      <div class=\"hero__chip hero__chip--br\">
+        <i data-lucide=\"shield-check\"></i>
+        <span>IS 14543 ready</span>
+      </div>
+    </div>
+  </div>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Purity Reigns</h1>
-            <p>Experience the crisp, refreshing taste of perfection in every drop. Hydration engineered for your health.</p>
-            <a href="#products" class="btn-primary">Explore Our Range</a>
-        </div>
-    </section>
+  <a href=\"#about\" class=\"hero__scroll\" aria-label=\"Scroll to next section\">
+    <span></span>
+    Scroll
+  </a>
+</section>
 
-    <section id="products" class="products">
-        <h2 class="section-title">Hydration for Every Need</h2>
-        <p class="section-subtitle">From personal hydration to bulk dispensing, discover our meticulously packaged range.</p>
-        
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="bottle-placeholder" style="height: 120px;"></div>
-                <h3>250 ML</h3>
-                <p>Perfect for quick refreshment on the go, meetings, and events.</p>
-            </div>
-            <div class="product-card">
-                <div class="bottle-placeholder" style="height: 160px;"></div>
-                <h3>500 ML</h3>
-                <p>Your ideal daily companion for active hydration.</p>
-            </div>
-            <div class="product-card">
-                <div class="bottle-placeholder" style="height: 200px;"></div>
-                <h3>1 Litre</h3>
-                <p>The standard of purity for your home and office desk.</p>
-            </div>
-            <div class="product-card">
-                <div class="bottle-placeholder" style="height: 240px; width: 120px; border-radius: 5px;"></div>
-                <h3>20 Litre Jar</h3>
-                <p>Bulk purity delivered directly to your dispensing units.</p>
-            </div>
-        </div>
-    </section>
+<!-- SVG bottle fallback -->
+<template id=\"bottle-svg\">
+  <svg viewBox=\"0 0 300 600\" xmlns=\"http://www.w3.org/2000/svg\" class=\"bottle-svg\" aria-hidden=\"true\">
+    <defs>
+      <linearGradient id=\"bg1\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"1\">
+        <stop offset=\"0\" stop-color=\"#a7f3e3\" stop-opacity=\".95\"/>
+        <stop offset=\"1\" stop-color=\"#0f766e\" stop-opacity=\".9\"/>
+      </linearGradient>
+      <linearGradient id=\"bg2\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\">
+        <stop offset=\"0\" stop-color=\"#ffffff\" stop-opacity=\".55\"/>
+        <stop offset=\"1\" stop-color=\"#ffffff\" stop-opacity=\".05\"/>
+      </linearGradient>
+    </defs>
+    <path d=\"M120 30 h60 v50 q0 10 8 18 l18 22 q24 28 24 70 v340 q0 40 -40 40 h-80 q-40 0 -40 -40 v-340 q0 -42 24 -70 l18 -22 q8 -8 8 -18z\" fill=\"url(#bg1)\" stroke=\"#053b3a\" stroke-width=\"2\"/>
+    <rect x=\"95\" y=\"280\" width=\"110\" height=\"120\" rx=\"6\" fill=\"#f8fafb\" opacity=\".94\"/>
+    <text x=\"150\" y=\"335\" text-anchor=\"middle\" font-family=\"Fraunces, serif\" font-size=\"34\" font-style=\"italic\" fill=\"#0f766e\">cleo</text>
+    <text x=\"150\" y=\"365\" text-anchor=\"middle\" font-family=\"Manrope, sans-serif\" font-size=\"10\" letter-spacing=\"4\" fill=\"#053b3a\">PREMIUM WATER</text>
+    <path d=\"M110 80 q40 30 80 0\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" opacity=\".6\"/>
+    <ellipse cx=\"135\" cy=\"200\" rx=\"6\" ry=\"22\" fill=\"#ffffff\" opacity=\".5\"/>
+  </svg>
+</template>
 
-    <section id="process" class="process">
-        <h2 class="section-title">The Cleo Promise</h2>
-        <p class="section-subtitle">Our state-of-the-art purification technology ensures absolute safety.</p>
-        
-        <div class="process-steps">
-            <div class="step">
-                <div class="step-icon">1</div>
-                <h4>Advanced Filtration</h4>
-                <p>Raw water passes through rigorous sand and carbon filters to remove suspended particles.</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">2</div>
-                <h4>Multi-Stage RO</h4>
-                <p>Our industrial Reverse Osmosis machinery strips away microscopic impurities and excess salts.</p>
-            </div>
-            <div class="step">
-                <div class="step-icon">3</div>
-                <h4>Ozonation</h4>
-                <p>Final sterilization ensures the water remains bacteria-free and extends shelf life safely.</p>
-            </div>
-        </div>
-    </section>
+<!-- ============ MARQUEE ============ -->
+<section class=\"marquee\" aria-hidden=\"true\" data-testid=\"marquee\">
+  <div class=\"marquee__track\">
+    <span>Pure</span><i>◆</i><span>Premium</span><i>◆</i><span>Pristine</span><i>◆</i>
+    <span>Crafted in Darbhanga</span><i>◆</i><span>FSSAI compliant</span><i>◆</i>
+    <span>Pure</span><i>◆</i><span>Premium</span><i>◆</i><span>Pristine</span><i>◆</i>
+    <span>Crafted in Darbhanga</span><i>◆</i><span>FSSAI compliant</span><i>◆</i>
+  </div>
+</section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <div>
-                <div class="footer-logo">Cleo Beverages</div>
-                <p class="footer-text">Committed to delivering the highest standards of packaged drinking water. Managed by industry experts Poonam Choudhary and Dilip Kumar Choudhary.</p>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 15px;">Contact Us</h4>
-                <p class="footer-text">Email: info@cleobeverages.com</p>
-                <p class="footer-text">Plant Head: Quality Control Dept.</p>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 Cleo Beverages. All rights reserved. | Purity Reigns.
-        </div>
-    </footer>
+<!-- ============ ABOUT ============ -->
+<section class=\"section about\" id=\"about\" data-testid=\"about-section\">
+  <div class=\"section__head\">
+    <div class=\"section__num\" data-reveal>01 — About</div>
+    <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+      A house built on <em>clarity,</em><br/>
+      consistency &amp; care.
+    </h2>
+  </div>
 
+  <div class=\"about__grid\">
+    <p class=\"about__lede\" data-reveal>
+      CLEO Beverages was founded with one quiet conviction — that everyday water should
+      feel anything but ordinary. From our facility in Darbhanga, we draw, refine and
+      bottle water under exacting protocols so that every sip carries the same standard,
+      whether it reaches a five-star kitchen or a school canteen.
+    </p>
+
+    <div class=\"about__pillars\">
+      <article class=\"pillar\" data-reveal>
+        <i data-lucide=\"compass\"></i>
+        <h3>Mission</h3>
+        <p>To set a new bar for purity in Indian packaged drinking water through engineering, hygiene and uncompromising sourcing.</p>
+      </article>
+      <article class=\"pillar\" data-reveal data-delay=\"80\">
+        <i data-lucide=\"telescope\"></i>
+        <h3>Vision</h3>
+        <p>A pan-India brand that families, hospitals and institutions instinctively trust — built bottle by bottle, partner by partner.</p>
+      </article>
+      <article class=\"pillar\" data-reveal data-delay=\"160\">
+        <i data-lucide=\"badge-check\"></i>
+        <h3>Commitment</h3>
+        <p>Six-stage purification, hospital-grade hygiene, sealed traceability and a quality team that signs off every batch.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class=\"section products\" id=\"products\" data-testid=\"products-section\">
+  <div class=\"section__head\">
+    <div class=\"section__num\" data-reveal>02 — The range</div>
+    <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+      Three sizes.<br/>
+      One <em>uncompromising</em> standard.
+    </h2>
+    <p class=\"section__sub\" data-reveal data-delay=\"160\">Designed for every moment — from boardroom tables and bedside trays to weddings, schools and long highway drives.</p>
+  </div>
+
+  <div class=\"products__grid\">
+    <article class=\"product\" data-reveal data-testid=\"product-200\">
+      <div class=\"product__media\">
+        <!-- BOTTLE PLACEHOLDER -->
+        <img src=\"assets/images/bottle-200.png\" alt=\"\" onerror=\"this.style.opacity=0\" />
+        <span class=\"product__badge\">200 ml</span>
+      </div>
+      <div class=\"product__body\">
+        <h3>The Pocket</h3>
+        <p>Single-serve clarity for events, flights and conferences. Crisp, sealed, instant.</p>
+        <ul>
+          <li><span>Pack</span><strong>48 / box</strong></li>
+          <li><span>Shelf life</span><strong>6 months</strong></li>
+          <li><span>Best for</span><strong>Events · Travel</strong></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class=\"product product--featured\" data-reveal data-delay=\"80\" data-testid=\"product-500\">
+      <div class=\"product__media\">
+        <img src=\"assets/images/bottle-500.png\" alt=\"\" onerror=\"this.style.opacity=0\" />
+        <span class=\"product__badge\">500 ml</span>
+      </div>
+      <div class=\"product__body\">
+        <h3>The Everyday</h3>
+        <p>Our most loved size — sized for the desk, the gym bag, the bedside table.</p>
+        <ul>
+          <li><span>Pack</span><strong>24 / box</strong></li>
+          <li><span>Shelf life</span><strong>6 months</strong></li>
+          <li><span>Best for</span><strong>Daily · Retail</strong></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class=\"product\" data-reveal data-delay=\"160\" data-testid=\"product-1l\">
+      <div class=\"product__media\">
+        <img src=\"assets/images/bottle-1l.png\" alt=\"\" onerror=\"this.style.opacity=0\" />
+        <span class=\"product__badge\">1 Litre</span>
+      </div>
+      <div class=\"product__body\">
+        <h3>The Table</h3>
+        <p>A generous pour for hotel tables, restaurants and family meals at home.</p>
+        <ul>
+          <li><span>Pack</span><strong>12 / box</strong></li>
+          <li><span>Shelf life</span><strong>6 months</strong></li>
+          <li><span>Best for</span><strong>HoReCa · Home</strong></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <p class=\"products__note\" data-reveal>
+    <i data-lucide=\"sparkles\"></i>
+    More formats — 2 L, 5 L and 20 L dispenser jars — are on our roadmap. Distributors can register early interest below.
+  </p>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class=\"section process\" id=\"process\" data-testid=\"process-section\">
+  <div class=\"section__head\">
+    <div class=\"section__num\" data-reveal>03 — Purification</div>
+    <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+      Six precise stages.<br/>
+      Zero <em>shortcuts.</em>
+    </h2>
+  </div>
+
+  <ol class=\"process__list\">
+    <li data-reveal>
+      <span class=\"process__num\">01</span>
+      <div>
+        <h3>Multi-grade filtration</h3>
+        <p>Layered sand and gravel beds strip sediment, turbidity and suspended solids at the source.</p>
+      </div>
+      <i data-lucide=\"layers\" class=\"process__ico\"></i>
+    </li>
+    <li data-reveal data-delay=\"60\">
+      <span class=\"process__num\">02</span>
+      <div>
+        <h3>Activated carbon</h3>
+        <p>Premium coconut-shell carbon removes chlorine, odours and organic compounds for a clean profile.</p>
+      </div>
+      <i data-lucide=\"atom\" class=\"process__ico\"></i>
+    </li>
+    <li data-reveal data-delay=\"120\">
+      <span class=\"process__num\">03</span>
+      <div>
+        <h3>Micron filtration</h3>
+        <p>1µ and 5µ cartridges polish the water, catching the finest residual particles before RO.</p>
+      </div>
+      <i data-lucide=\"filter\" class=\"process__ico\"></i>
+    </li>
+    <li data-reveal data-delay=\"180\">
+      <span class=\"process__num\">04</span>
+      <div>
+        <h3>RO purification</h3>
+        <p>High-pressure reverse osmosis membranes reduce TDS, heavy metals and dissolved impurities.</p>
+      </div>
+      <i data-lucide=\"aperture\" class=\"process__ico\"></i>
+    </li>
+    <li data-reveal data-delay=\"240\">
+      <span class=\"process__num\">05</span>
+      <div>
+        <h3>UV sterilization</h3>
+        <p>Calibrated ultraviolet exposure neutralises bacteria, viruses and microbial life — silently, chemically inert.</p>
+      </div>
+      <i data-lucide=\"sun\" class=\"process__ico\"></i>
+    </li>
+    <li data-reveal data-delay=\"300\">
+      <span class=\"process__num\">06</span>
+      <div>
+        <h3>Ozonation</h3>
+        <p>A final ozone polish gives every bottle long-life freshness and a crisp, balanced finish.</p>
+      </div>
+      <i data-lucide=\"circle-dashed\" class=\"process__ico\"></i>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ QUALITY ============ -->
+<section class=\"section quality\" id=\"quality\" data-testid=\"quality-section\">
+  <div class=\"quality__grid\">
+    <div class=\"quality__copy\">
+      <div class=\"section__num\" data-reveal>04 — Quality</div>
+      <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+        Tested, sealed,<br/>
+        signed off — <em>every batch.</em>
+      </h2>
+      <p data-reveal data-delay=\"160\">
+        Our in-house lab and trained QA team verify physical, chemical and microbiological
+        parameters at multiple checkpoints — from raw water intake to the final sealed
+        bottle. Nothing leaves the line without a signature.
+      </p>
+
+      <div class=\"quality__cards\">
+        <div class=\"qcard\" data-reveal>
+          <i data-lucide=\"file-badge\"></i>
+          <h4>FSSAI compliant</h4>
+          <p>Licence <span class=\"placeholder\">{{FSSAI_NO}}</span> · IS 14543 standard followed across the facility.</p>
+        </div>
+        <div class=\"qcard\" data-reveal data-delay=\"80\">
+          <i data-lucide=\"microscope\"></i>
+          <h4>In-house lab</h4>
+          <p>Daily testing for pH, TDS, alkalinity, microbial load and residual ozone.</p>
+        </div>
+        <div class=\"qcard\" data-reveal data-delay=\"160\">
+          <i data-lucide=\"hard-hat\"></i>
+          <h4>Hygienic plant</h4>
+          <p>Food-grade SS contact surfaces, GMP gowning, automated rinse-fill-cap line.</p>
+        </div>
+        <div class=\"qcard\" data-reveal data-delay=\"240\">
+          <i data-lucide=\"scan-line\"></i>
+          <h4>Batch traceability</h4>
+          <p>Every bottle carries a batch code linking back to its purification log.</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class=\"quality__panel\" data-reveal data-delay=\"200\">
+      <header>
+        <span>Live parameter window</span>
+        <i data-lucide=\"activity\"></i>
+      </header>
+      <ul>
+        <li><span>pH</span><strong>7.0 – 7.6</strong></li>
+        <li><span>TDS</span><strong>50 – 150 ppm</strong></li>
+        <li><span>Turbidity</span><strong>&lt; 1 NTU</strong></li>
+        <li><span>Microbial</span><strong>Nil cfu/ml</strong></li>
+        <li><span>Residual O₃</span><strong>0.1 – 0.4 ppm</strong></li>
+      </ul>
+      <footer>Indicative ranges · As per IS 14543 :2016</footer>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ FACILITY ============ -->
+<section class=\"section facility\" id=\"facility\" data-testid=\"facility-section\">
+  <div class=\"section__head\">
+    <div class=\"section__num\" data-reveal>05 — Facility</div>
+    <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+      A plant designed<br/>
+      around <em>hygiene first.</em>
+    </h2>
+    <p class=\"section__sub\" data-reveal data-delay=\"160\">
+      Our Darbhanga unit pairs modern automation with disciplined manual checks — a balance
+      that keeps quality steady at any scale.
+    </p>
+  </div>
+
+  <div class=\"facility__grid\">
+    <figure class=\"facility__hero\" data-reveal>
+      <!-- FACTORY IMAGE PLACEHOLDER /assets/images/facility-1.jpg -->
+      <img src=\"assets/images/facility-1.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" />
+      <figcaption>Production hall — automated rinse / fill / cap line</figcaption>
+    </figure>
+    <figure class=\"facility__tile\" data-reveal data-delay=\"80\">
+      <img src=\"assets/images/facility-2.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" />
+      <figcaption>RO &amp; UV stage</figcaption>
+    </figure>
+    <figure class=\"facility__tile\" data-reveal data-delay=\"160\">
+      <img src=\"assets/images/facility-3.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" />
+      <figcaption>QC laboratory</figcaption>
+    </figure>
+    <figure class=\"facility__tile\" data-reveal data-delay=\"240\">
+      <img src=\"assets/images/facility-4.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" />
+      <figcaption>Warehouse &amp; dispatch</figcaption>
+    </figure>
+  </div>
+
+  <div class=\"facility__stats\">
+    <div data-reveal><strong class=\"placeholder\">{{CAPACITY}}</strong><span>Bottles / day capacity</span></div>
+    <div data-reveal data-delay=\"80\"><strong>3</strong><span>Shifts · 24×7 ready</span></div>
+    <div data-reveal data-delay=\"160\"><strong>100%</strong><span>Food-grade SS contact</span></div>
+    <div data-reveal data-delay=\"240\"><strong>Pan-India</strong><span>Dispatch network</span></div>
+  </div>
+</section>
+
+<!-- ============ B2B ============ -->
+<section class=\"section b2b\" id=\"b2b\" data-testid=\"b2b-section\">
+  <div class=\"section__head\">
+    <div class=\"section__num\" data-reveal>06 — Bulk &amp; B2B</div>
+    <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+      Built for institutions<br/>
+      that <em>don't compromise.</em>
+    </h2>
+  </div>
+
+  <div class=\"b2b__grid\">
+    <div class=\"b2b__card\" data-reveal><i data-lucide=\"hotel\"></i><h4>Hotels &amp; resorts</h4><p>Branded table-water programs with consistent supply.</p></div>
+    <div class=\"b2b__card\" data-reveal data-delay=\"60\"><i data-lucide=\"utensils\"></i><h4>Restaurants &amp; cafés</h4><p>200ml / 500ml / 1L combinations for every cover.</p></div>
+    <div class=\"b2b__card\" data-reveal data-delay=\"120\"><i data-lucide=\"hospital\"></i><h4>Hospitals</h4><p>Clinical-grade hygiene and predictable batches.</p></div>
+    <div class=\"b2b__card\" data-reveal data-delay=\"180\"><i data-lucide=\"building-2\"></i><h4>Corporate offices</h4><p>Scheduled deliveries for pantries and meeting rooms.</p></div>
+    <div class=\"b2b__card\" data-reveal data-delay=\"240\"><i data-lucide=\"graduation-cap\"></i><h4>Educational institutions</h4><p>Affordable, safe hydration for students and staff.</p></div>
+    <div class=\"b2b__card\" data-reveal data-delay=\"300\"><i data-lucide=\"party-popper\"></i><h4>Weddings &amp; events</h4><p>Volume orders with branded sleeves on request.</p></div>
+  </div>
+</section>
+
+<!-- ============ PACKAGING ============ -->
+<section class=\"section packaging\" id=\"packaging\" data-testid=\"packaging-section\">
+  <div class=\"packaging__grid\">
+    <div class=\"packaging__copy\">
+      <div class=\"section__num\" data-reveal>07 — Private label</div>
+      <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+        Your brand,<br/>
+        bottled by <em>CLEO.</em>
+      </h2>
+      <p data-reveal data-delay=\"160\">
+        From hotel chains and wedding planners to D2C brands and political campaigns —
+        we offer end-to-end private label and customised packaging across all our sizes.
+      </p>
+      <ul class=\"packaging__features\">
+        <li data-reveal><i data-lucide=\"check\"></i> Custom shrink-sleeve artwork</li>
+        <li data-reveal data-delay=\"60\"><i data-lucide=\"check\"></i> Co-branding &amp; event editions</li>
+        <li data-reveal data-delay=\"120\"><i data-lucide=\"check\"></i> MOQ-friendly trial runs</li>
+        <li data-reveal data-delay=\"180\"><i data-lucide=\"check\"></i> Design support on request</li>
+      </ul>
+      <a href=\"#contact\" class=\"btn btn--primary\" data-testid=\"packaging-cta\">Request a quote <i data-lucide=\"arrow-up-right\"></i></a>
+    </div>
+
+    <div class=\"packaging__visual\" data-reveal data-delay=\"120\">
+      <div class=\"packaging__sleeve packaging__sleeve--a\">YOUR LOGO</div>
+      <div class=\"packaging__sleeve packaging__sleeve--b\">EVENT EDITION</div>
+      <div class=\"packaging__sleeve packaging__sleeve--c\">HOTEL TABLE</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class=\"section partners\" id=\"partners\" data-testid=\"partners-section\">
+  <div class=\"partners__inner\">
+    <div class=\"partners__head\">
+      <div class=\"section__num\" data-reveal>08 — Partner with us</div>
+      <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+        Distributors &amp; dealers,<br/>
+        let's <em>grow together.</em>
+      </h2>
+      <p data-reveal data-delay=\"160\">
+        We are actively appointing distributors and super-stockists across Bihar, Jharkhand,
+        West Bengal, UP and Nepal border markets. Strong margins, marketing support, exclusive
+        territories.
+      </p>
+    </div>
+
+    <div class=\"partners__steps\">
+      <div data-reveal>
+        <span>01</span>
+        <h4>Submit enquiry</h4>
+        <p>Fill the form below or WhatsApp us with your territory of interest.</p>
+      </div>
+      <div data-reveal data-delay=\"80\">
+        <span>02</span>
+        <h4>Discovery call</h4>
+        <p>Our team understands your market, infrastructure and goals.</p>
+      </div>
+      <div data-reveal data-delay=\"160\">
+        <span>03</span>
+        <h4>Sample &amp; quote</h4>
+        <p>We share samples, pricing, schemes and a region-specific plan.</p>
+      </div>
+      <div data-reveal data-delay=\"240\">
+        <span>04</span>
+        <h4>Onboarding</h4>
+        <p>Agreement, first dispatch and dedicated relationship manager.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class=\"section gallery\" id=\"gallery\" data-testid=\"gallery-section\">
+  <div class=\"section__head\">
+    <div class=\"section__num\" data-reveal>09 — Gallery</div>
+    <h2 class=\"section__title\" data-reveal data-delay=\"80\">Inside CLEO.</h2>
+  </div>
+
+  <div class=\"gallery__grid\">
+    <figure data-reveal class=\"gallery__cell gallery__cell--tall\"><img src=\"assets/images/gallery-1.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" /></figure>
+    <figure data-reveal data-delay=\"60\" class=\"gallery__cell\"><img src=\"assets/images/gallery-2.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" /></figure>
+    <figure data-reveal data-delay=\"120\" class=\"gallery__cell\"><img src=\"assets/images/gallery-3.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" /></figure>
+    <figure data-reveal data-delay=\"180\" class=\"gallery__cell gallery__cell--wide\"><img src=\"assets/images/gallery-4.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" /></figure>
+    <figure data-reveal data-delay=\"240\" class=\"gallery__cell\"><img src=\"assets/images/gallery-5.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" /></figure>
+    <figure data-reveal data-delay=\"300\" class=\"gallery__cell\"><img src=\"assets/images/gallery-6.jpg\" alt=\"\" onerror=\"this.classList.add('is-empty')\" /></figure>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class=\"section testimonials\" id=\"testimonials\" data-testid=\"testimonials-section\">
+  <div class=\"section__head\">
+    <div class=\"section__num\" data-reveal>10 — Voices</div>
+    <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+      Trusted across<br/>
+      <em>tables &amp; teams.</em>
+    </h2>
+  </div>
+
+  <div class=\"testimonials__grid\">
+    <figure class=\"quote\" data-reveal>
+      <blockquote>\"CLEO has become our default table water — guests notice the taste and the presentation.\"</blockquote>
+      <figcaption>
+        <strong class=\"placeholder\">{{NAME}}</strong>
+        <span class=\"placeholder\">{{HOTEL · CITY}}</span>
+      </figcaption>
+    </figure>
+    <figure class=\"quote\" data-reveal data-delay=\"80\">
+      <blockquote>\"Consistent supply, clean batches, and a team that actually picks up the phone. Rare combination.\"</blockquote>
+      <figcaption>
+        <strong class=\"placeholder\">{{NAME}}</strong>
+        <span class=\"placeholder\">{{DISTRIBUTOR · REGION}}</span>
+      </figcaption>
+    </figure>
+    <figure class=\"quote\" data-reveal data-delay=\"160\">
+      <blockquote>\"We switched our entire campus to CLEO last term — zero complaints since.\"</blockquote>
+      <figcaption>
+        <strong class=\"placeholder\">{{NAME}}</strong>
+        <span class=\"placeholder\">{{INSTITUTION}}</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class=\"section contact\" id=\"contact\" data-testid=\"contact-section\">
+  <div class=\"contact__grid\">
+    <div class=\"contact__copy\">
+      <div class=\"section__num\" data-reveal>11 — Contact</div>
+      <h2 class=\"section__title\" data-reveal data-delay=\"80\">
+        Let's get a sample<br/>
+        to <em>your table.</em>
+      </h2>
+      <p data-reveal data-delay=\"160\">
+        Whether you're a hotel, a hospital, a distributor or a curious neighbour — drop a
+        message and our team will respond within one working day.
+      </p>
+
+      <ul class=\"contact__list\">
+        <li data-reveal><i data-lucide=\"map-pin\"></i><div><span>Factory</span><strong class=\"placeholder\">{{FACTORY_ADDRESS}}, Darbhanga, Bihar — India</strong></div></li>
+        <li data-reveal data-delay=\"60\"><i data-lucide=\"phone\"></i><div><span>Phone</span><a href=\"tel:{{PHONE}}\" data-testid=\"contact-phone\" class=\"placeholder\">{{PHONE}}</a></div></li>
+        <li data-reveal data-delay=\"120\"><i data-lucide=\"mail\"></i><div><span>Email</span><a href=\"mailto:{{EMAIL}}\" data-testid=\"contact-email\" class=\"placeholder\">{{EMAIL}}</a></div></li>
+        <li data-reveal data-delay=\"180\"><i data-lucide=\"message-circle\"></i><div><span>WhatsApp</span><a href=\"https://wa.me/{{WHATSAPP}}\" data-testid=\"contact-whatsapp\" class=\"placeholder\">+91 {{WHATSAPP}}</a></div></li>
+      </ul>
+
+      <div class=\"contact__socials\" data-reveal data-delay=\"240\">
+        <a href=\"#\" aria-label=\"Instagram\" data-testid=\"social-instagram\"><i data-lucide=\"instagram\"></i></a>
+        <a href=\"#\" aria-label=\"Facebook\" data-testid=\"social-facebook\"><i data-lucide=\"facebook\"></i></a>
+        <a href=\"#\" aria-label=\"LinkedIn\" data-testid=\"social-linkedin\"><i data-lucide=\"linkedin\"></i></a>
+        <a href=\"#\" aria-label=\"YouTube\" data-testid=\"social-youtube\"><i data-lucide=\"youtube\"></i></a>
+      </div>
+    </div>
+
+    <form class=\"contact__form\" id=\"contactForm\" data-testid=\"contact-form\" novalidate>
+      <h3>Send an enquiry</h3>
+
+      <div class=\"field\">
+        <label for=\"name\">Full name</label>
+        <input id=\"name\" name=\"name\" type=\"text\" autocomplete=\"name\" required data-testid=\"form-name\" />
+      </div>
+
+      <div class=\"field-row\">
+        <div class=\"field\">
+          <label for=\"phone\">Phone</label>
+          <input id=\"phone\" name=\"phone\" type=\"tel\" autocomplete=\"tel\" required data-testid=\"form-phone\" />
+        </div>
+        <div class=\"field\">
+          <label for=\"email\">Email</label>
+          <input id=\"email\" name=\"email\" type=\"email\" autocomplete=\"email\" data-testid=\"form-email\" />
+        </div>
+      </div>
+
+      <div class=\"field\">
+        <label for=\"interest\">I'm interested in</label>
+        <select id=\"interest\" name=\"interest\" data-testid=\"form-interest\">
+          <option>Retail purchase</option>
+          <option>Bulk / B2B supply</option>
+          <option>Distributor / dealer enquiry</option>
+          <option>Private label / packaging</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class=\"field\">
+        <label for=\"message\">Message</label>
+        <textarea id=\"message\" name=\"message\" rows=\"4\" data-testid=\"form-message\" placeholder=\"Tell us about your requirement, volumes, timeline...\"></textarea>
+      </div>
+
+      <button type=\"submit\" class=\"btn btn--primary btn--full\" data-testid=\"form-submit\">
+        Send enquiry <i data-lucide=\"send\"></i>
+      </button>
+
+      <p class=\"contact__form-note\">By submitting, you agree to be contacted by CLEO Beverages. This form opens your default email/WhatsApp on this static site.</p>
+    </form>
+  </div>
+
+  <!-- MAP PLACEHOLDER -->
+  <div class=\"contact__map\" data-reveal data-testid=\"contact-map\" aria-label=\"Map placeholder\">
+    <div class=\"contact__map-inner\">
+      <i data-lucide=\"map\"></i>
+      <div>
+        <strong>Google Maps placeholder</strong>
+        <span>Replace the iframe in <code>index.html</code> with your Google Maps embed for the Darbhanga facility.</span>
+      </div>
+    </div>
+    <!-- To enable, uncomment and paste your embed:
+    <iframe src=\"\" width=\"100%\" height=\"100%\" style=\"border:0\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>
+    -->
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class=\"footer\" data-testid=\"footer\">
+  <div class=\"footer__grid\">
+    <div class=\"footer__brand\">
+      <div class=\"footer__logo\">CLEO<span>°</span></div>
+      <p>Premium packaged drinking water from Darbhanga, Bihar — refined for India.</p>
+    </div>
+    <div class=\"footer__col\">
+      <h5>Explore</h5>
+      <a href=\"#about\">About</a>
+      <a href=\"#products\">Products</a>
+      <a href=\"#process\">Purification</a>
+      <a href=\"#quality\">Quality</a>
+    </div>
+    <div class=\"footer__col\">
+      <h5>Business</h5>
+      <a href=\"#b2b\">Bulk &amp; B2B</a>
+      <a href=\"#packaging\">Private label</a>
+      <a href=\"#partners\">Dealers</a>
+      <a href=\"#contact\">Contact</a>
+    </div>
+    <div class=\"footer__col\">
+      <h5>Reach</h5>
+      <a href=\"tel:{{PHONE}}\" class=\"placeholder\">{{PHONE}}</a>
+      <a href=\"mailto:{{EMAIL}}\" class=\"placeholder\">{{EMAIL}}</a>
+      <a href=\"https://wa.me/{{WHATSAPP}}\" class=\"placeholder\">WhatsApp us</a>
+    </div>
+  </div>
+
+  <div class=\"footer__base\">
+    <span>© <span id=\"year\">2025</span> CLEO Beverages. All rights reserved.</span>
+    <span>Crafted in Darbhanga, Bihar · India</span>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a href=\"https://wa.me/{{WHATSAPP}}\" class=\"wa-fab\" target=\"_blank\" rel=\"noopener\" aria-label=\"Chat on WhatsApp\" data-testid=\"whatsapp-fab\">
+  <i data-lucide=\"message-circle-more\"></i>
+  <span>Chat on WhatsApp</span>
+</a>
+
+<!-- ============ TOAST ============ -->
+<div class=\"toast\" id=\"toast\" role=\"status\" aria-live=\"polite\" data-testid=\"toast\"></div>
+
+<script src=\"js/main.js\" defer></script>
 </body>
 </html>
+"
+Observation: Create successful: /app/cleo-site/index.html
