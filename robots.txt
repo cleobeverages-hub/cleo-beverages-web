@@ -1,0 +1,7 @@
+
+Action: file_editor create /app/cleo-site/robots.txt --file-text "User-agent: *
+Allow: /
+
+Sitemap: https://cleobeverages.com/sitemap.xml
+"
+Observation: Create successful: /app/cleo-site/robots.txt
