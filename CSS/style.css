@@ -1,171 +1,433 @@
-/* =========================================================
-   CLEO Beverages — Premium Blue Aesthetic
-   ========================================================= */
-:root {
-  --navy-900: #050d1a;
-  --navy-800: #0a192f;
-  --navy-700: #112240;
-  --blue-accent: #0077b6;
-  --cyan-bright: #00b4d8;
-  --cyan-soft: #90e0ef;
-  --text-main: #e6f1ff;
-  --text-muted: #8892b0;
-  --glass-bg: rgba(17, 34, 64, 0.6);
-  --glass-border: rgba(0, 180, 216, 0.15);
-  
-  --font-display: 'Playfair Display', serif;
-  --font-sans: 'Outfit', sans-serif;
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
+<!DOCTYPE html>
+<html lang="en">
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--navy-900);
-  color: var(--text-main);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+    <title>CLEO Beverages | Purity Reigns</title>
 
-/* Typography */
-h1, h2, h3, h4 { font-family: var(--font-display); color: #fff; line-height: 1.2; }
-a { color: inherit; text-decoration: none; transition: var(--transition); }
+    <meta name="description"
+        content="CLEO Beverages - Premium Packaged Drinking Water. RO + UV + Ozonation Treated. Bulk Supply, Distribution & Private Label Solutions.">
 
-/* Glassmorphism Utility */
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-}
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="assets/icons/favicon.svg">
 
-/* Buttons */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 15px;
-  letter-spacing: 0.5px; transition: var(--transition); cursor: pointer;
-}
-.btn--primary {
-  background: linear-gradient(135deg, var(--blue-accent), var(--cyan-bright));
-  color: #fff; box-shadow: 0 8px 20px rgba(0, 180, 216, 0.3);
-}
-.btn--primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(0, 180, 216, 0.4); }
-.btn--ghost {
-  background: transparent; border: 1px solid var(--cyan-bright); color: var(--cyan-bright);
-}
-.btn--ghost:hover { background: rgba(0, 180, 216, 0.1); }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
 
-/* Navigation */
-.nav {
-  position: fixed; top: 0; width: 100%; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 20px 5%; background: rgba(5, 13, 26, 0.8);
-  backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.nav__logo { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: #fff; letter-spacing: 1px; }
-.nav__links { display: flex; gap: 30px; }
-.nav__links a { font-size: 15px; font-weight: 500; color: var(--text-main); }
-.nav__links a:hover { color: var(--cyan-bright); }
-.nav__cta { color: var(--cyan-bright); font-weight: 600; border: 1px solid var(--cyan-bright); padding: 8px 20px; border-radius: 50px; }
-.nav__cta:hover { background: var(--cyan-bright); color: var(--navy-900); }
+<body>
 
-/* Hero Section */
-.hero {
-  position: relative; min-height: 100vh; display: flex; align-items: center;
-  padding: 120px 5% 60px; overflow: hidden;
-}
-.hero__bg-glow {
-  position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,180,216,0.15) 0%, rgba(10,25,47,0) 70%);
-  top: 50%; right: 10%; transform: translateY(-50%); z-index: -1;
-}
-.hero__grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; max-width: 1300px; margin: 0 auto; }
-.eyebrow { display: inline-block; padding: 6px 16px; background: rgba(0, 180, 216, 0.1); border: 1px solid var(--cyan-bright); border-radius: 50px; color: var(--cyan-bright); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-.hero__title { font-size: clamp(40px, 6vw, 70px); margin-bottom: 24px; }
-.hero__title span { color: var(--cyan-bright); font-style: italic; }
-.hero__lede { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; max-width: 500px; }
-.hero__cta-row { display: flex; gap: 20px; }
-.floating-bottle { width: 100%; max-width: 400px; animation: float 6s ease-in-out infinite; drop-shadow: 0 30px 40px rgba(0,0,0,0.5); }
+    <!-- NAVBAR -->
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
+    <header class="navbar">
 
-/* Sections */
-.section { padding: 100px 5%; max-width: 1300px; margin: 0 auto; }
-.section__head.center { text-align: center; margin-bottom: 60px; }
-.section__head { margin-bottom: 50px; }
-.section__title { font-size: 42px; margin-bottom: 16px; }
-.section__sub { font-size: 18px; color: var(--cyan-soft); }
+        <div class="logo">
+            <img src="assets/logo/cleo-logo.png" alt="CLEO">
+        </div>
 
-/* Features Grid */
-.features__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.feature-card { padding: 40px 30px; text-align: center; transition: var(--transition); }
-.feature-card:hover { transform: translateY(-10px); border-color: var(--cyan-bright); }
-.feature-card i { width: 40px; height: 40px; color: var(--cyan-bright); margin-bottom: 20px; }
-.feature-card h3 { font-size: 22px; margin-bottom: 12px; }
-.feature-card p { font-size: 15px; color: var(--text-muted); }
+        <nav>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#process">Process</a>
+            <a href="#b2b">B2B</a>
+            <a href="#facility">Facility</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-/* Process Timeline */
-.process__timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-.process__step { position: relative; padding-left: 60px; }
-.step-icon { position: absolute; left: 0; top: 0; width: 40px; height: 40px; background: rgba(0, 180, 216, 0.1); border: 1px solid var(--cyan-bright); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--cyan-bright); }
-.process__step h4 { font-size: 20px; margin-bottom: 8px; color: #fff; }
-.process__step p { font-size: 14px; color: var(--text-muted); }
+    </header>
 
-/* Services */
-.services__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px; }
-.service-block { padding: 40px; transition: var(--transition); }
-.service-block:hover { background: rgba(0, 180, 216, 0.05); }
-.service-block i { width: 36px; height: 36px; color: var(--cyan-bright); margin-bottom: 20px; }
-.service-block h3 { font-size: 24px; margin-bottom: 15px; }
-.service-block p { color: var(--text-muted); }
+    <!-- HERO -->
 
-.occasions-banner { padding: 40px; text-align: center; background: linear-gradient(135deg, rgba(17,34,64,0.8), rgba(0,119,182,0.2)); }
-.occasions-banner h3 { font-size: 28px; margin-bottom: 30px; color: var(--cyan-soft); }
-.occasions-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-.occasions-list span { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: rgba(0,0,0,0.3); border-radius: 30px; font-size: 14px; color: #fff; }
-.occasions-list i { width: 16px; height: 16px; color: var(--cyan-bright); }
+    <section class="hero">
 
-/* Footer */
-.footer { background: #02060d; padding: 80px 5% 30px; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer__grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px; }
-.footer__brand { padding-right: 40px; }
-.footer__logo { font-size: 60px; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; }
-.footer__tagline { font-family: var(--font-display); font-size: 24px; font-style: italic; color: var(--cyan-bright); margin-bottom: 20px; }
-.gstin { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+        <div class="hero-content">
 
-.footer__contact { padding: 40px; }
-.footer__contact h3 { margin-bottom: 24px; font-size: 24px; }
-.footer__contact ul { list-style: none; }
-.footer__contact li { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
-.footer__contact i { color: var(--cyan-bright); flex-shrink: 0; margin-top: 4px; }
-.phone-list { display: flex; flex-direction: column; gap: 5px; }
-.footer__contact a { transition: var(--transition); }
-.footer__contact a:hover { color: var(--cyan-bright); }
+            <span class="hero-tag">
+                PREMIUM PACKAGED DRINKING WATER
+            </span>
 
-.footer__base { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 14px; }
+            <h1>
+                Purity Reigns.
+            </h1>
 
-/* Responsive */
-@media (max-width: 968px) {
-  .hero__grid { grid-template-columns: 1fr; text-align: center; }
-  .hero__title { font-size: 48px; }
-  .hero__lede { margin: 0 auto 30px; }
-  .hero__cta-row { justify-content: center; }
-  .footer__grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-  .nav__links { display: none; }
-  .btn { padding: 12px 24px; }
-}
+            <h2>
+                Har Boond Mein Vishwas
+            </h2>
 
-/* Animations */
-[data-reveal] {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  transition-delay: calc(var(--delay, 0) * 1ms);
-}
-[data-reveal].is-revealed { opacity: 1; transform: translateY(0); }
+            <p>
+                Premium packaged drinking water engineered for purity,
+                safety and trust.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="btn-primary">
+                    Become Distributor
+                </a>
+
+                <a href="#products" class="btn-secondary">
+                    Explore Products
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <!-- Replace later -->
+
+            <img src="assets/bottles/bottle-1l.png"
+                alt="CLEO Bottle">
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
+
+        <div class="section-header">
+
+            <span>ABOUT CLEO</span>
+
+            <h2>
+                Every Drop Begins With Trust
+            </h2>
+
+        </div>
+
+        <div class="about-content">
+
+            <p>
+
+                At CLEO Beverages, we combine advanced purification
+                technologies with strict quality standards to deliver
+                safe, refreshing and reliable packaged drinking water.
+
+            </p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>RO + UV + Ozone</h3>
+            </div>
+
+            <div class="stat-card">
+                <h3>Mineral Enriched</h3>
+            </div>
+
+            <div class="stat-card">
+                <h3>Safe & Hygienic</h3>
+            </div>
+
+            <div class="stat-card">
+                <h3>Food Grade Processing</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCTS -->
+
+    <section id="products" class="products">
+
+        <div class="section-header">
+
+            <span>OUR PRODUCTS</span>
+
+            <h2>
+                Purity In Every Size
+            </h2>
+
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+
+                <img src="assets/bottles/bottle-200ml.png">
+
+                <h3>200 ML</h3>
+
+                <p>Events & Gatherings</p>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="assets/bottles/bottle-500ml.png">
+
+                <h3>500 ML</h3>
+
+                <p>Retail & Daily Use</p>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="assets/bottles/bottle-1l.png">
+
+                <h3>1 Litre</h3>
+
+                <p>Home & Business Use</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROCESS -->
+
+    <section id="process" class="process">
+
+        <div class="section-header">
+
+            <span>PURIFICATION JOURNEY</span>
+
+            <h2>
+                From Source To Sip
+            </h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div>Raw Water</div>
+            <div>Multi Grade Filtration</div>
+            <div>Activated Carbon</div>
+            <div>Micron Filtration</div>
+            <div>RO Purification</div>
+            <div>Mineral Balancing</div>
+            <div>UV Sterilization</div>
+            <div>Ozonation</div>
+            <div>Hygienic Bottling</div>
+
+        </div>
+
+    </section>
+
+    <!-- WHY CLEO -->
+
+    <section class="why-cleo">
+
+        <div class="section-header">
+
+            <span>WHY CHOOSE CLEO</span>
+
+            <h2>
+                Trusted Quality.
+                Reliable Supply.
+            </h2>
+
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">Batch Tested Quality</div>
+
+            <div class="why-card">Advanced Water Safety</div>
+
+            <div class="why-card">Hygienic Bottling Practices</div>
+
+            <div class="why-card">Consistent Purity</div>
+
+            <div class="why-card">Reliable Supply Chain</div>
+
+            <div class="why-card">Long-Term Partnerships</div>
+
+        </div>
+
+    </section>
+
+    <!-- B2B -->
+
+    <section id="b2b" class="b2b">
+
+        <div class="section-header">
+
+            <span>B2B SOLUTIONS</span>
+
+            <h2>
+                Reliable Supply.
+                Premium Quality.
+            </h2>
+
+        </div>
+
+        <div class="b2b-grid">
+
+            <div>Hotels & Resorts</div>
+
+            <div>Restaurants & Cafés</div>
+
+            <div>Hospitals</div>
+
+            <div>Corporate Offices</div>
+
+            <div>Educational Institutions</div>
+
+            <div>Events & Functions</div>
+
+        </div>
+
+    </section>
+
+    <!-- PRIVATE LABEL -->
+
+    <section class="private-label">
+
+        <div class="section-header">
+
+            <span>CUSTOM LABEL SOLUTIONS</span>
+
+            <h2>
+                Your Brand.
+                Our Bottles.
+            </h2>
+
+        </div>
+
+        <p>
+
+            Customized packaging and private-label solutions
+            for hotels, hospitals, restaurants, offices,
+            events and institutions.
+
+        </p>
+
+    </section>
+
+    <!-- FACILITY -->
+
+    <section id="facility" class="facility">
+
+        <div class="section-header">
+
+            <span>MANUFACTURING FACILITY</span>
+
+            <h2>
+                Built For Purity
+            </h2>
+
+        </div>
+
+        <img src="assets/facility/factory.jpg"
+            alt="Factory">
+
+    </section>
+
+    <!-- DISTRIBUTOR -->
+
+    <section class="dealership">
+
+        <h2>
+            Become A CLEO Distributor
+        </h2>
+
+        <p>
+
+            Join our growing distribution network
+            and bring trusted packaged drinking water
+            to your market.
+
+        </p>
+
+        <a href="#contact" class="btn-primary">
+
+            Apply For Dealership
+
+        </a>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-header">
+
+            <span>CONTACT US</span>
+
+            <h2>
+                Let's Connect
+            </h2>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div>
+
+                <h3>Phone</h3>
+
+                <p>
+                    +91 7903083791
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Email</h3>
+
+                <p>
+                    cleobeverages@gmail.com
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Website</h3>
+
+                <p>
+                    cleobeverages.com
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Address</h3>
+
+                <p>
+
+                    Ashok Paper Mill Road,
+                    Darbhanga, Bihar - 847101
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            CLEO BEVERAGES
+        </h3>
+
+        <p>
+            Purity Reigns
+        </p>
+
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
