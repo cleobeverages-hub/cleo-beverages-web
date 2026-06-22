@@ -1,77 +1,345 @@
-/* =========================================================
-   CLEO Beverages — Premium Interaction Layer
-   ========================================================= */
+/* ==========================================
+CLEO BEVERAGES
+Premium Website JS
+========================================== */
 
-(function () {
-  'use strict';
+/* NAVBAR SCROLL EFFECT */
 
-  // ---------- 1. Hydrate Lucide Icons ----------
-  function hydrateIcons() {
-    if (window.lucide && typeof window.lucide.createIcons === 'function') {
-      window.lucide.createIcons();
-    }
-  }
+const navbar = document.querySelector(".navbar");
 
-  // ---------- 2. Dynamic Navigation Bar ----------
-  var nav = document.getElementById('nav');
-  function onScroll() {
-    if (!nav) return;
+window.addEventListener("scroll", () => {
+
     if (window.scrollY > 50) {
-      nav.style.background = 'rgba(5, 13, 26, 0.98)';
-      nav.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
-      nav.style.padding = '15px 5%';
+
+        navbar.style.background = "rgba(255,255,255,0.95)";
+        navbar.style.boxShadow = "0 10px 30px rgba(0,0,0,.08)";
+
     } else {
-      nav.style.background = 'rgba(5, 13, 26, 0.8)';
-      nav.style.boxShadow = 'none';
-      nav.style.padding = '20px 5%';
+
+        navbar.style.background = "rgba(255,255,255,.85)";
+        navbar.style.boxShadow = "none";
+
     }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
-  // ---------- 3. Scroll Reveal Animations ----------
-  var els = document.querySelectorAll('[data-reveal]');
-  
-  // Set the CSS delay variable based on HTML attributes
-  els.forEach(function (el) {
-    var d = parseInt(el.getAttribute('data-delay') || '0', 10);
-    el.style.setProperty('--delay', d);
-  });
+});
 
-  // Use IntersectionObserver to trigger animations when elements enter the screen
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-revealed');
-          io.unobserve(e.target); // Stop observing once revealed
+
+/* ==========================================
+SCROLL REVEAL ANIMATION
+========================================== */
+
+const revealElements = document.querySelectorAll(`
+.hero-content,
+.hero-image,
+.section-header,
+.about-content,
+.stat-card,
+.product-card,
+.timeline div,
+.why-card,
+.b2b-grid div,
+.private-label,
+.facility img,
+.dealership,
+.contact-grid div
+`);
+
+const revealOnScroll = () => {
+
+    revealElements.forEach((element) => {
+
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+
+            element.classList.add("show");
+
         }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    
-    els.forEach(function (el) { io.observe(el); });
-  } else {
-    // Fallback for older browsers
-    els.forEach(function (el) { el.classList.add('is-revealed'); });
-  }
 
-  // ---------- 4. Smooth Scrolling for Anchor Links ----------
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      var id = a.getAttribute('href');
-      if (!id || id === '#') return;
-      var target = document.querySelector(id);
-      if (!target) return;
-      e.preventDefault();
-      
-      // Offset by 80px to prevent the fixed header from covering the title
-      var top = target.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: top, behavior: 'smooth' });
     });
-  });
 
-  // Initialize Icons when DOM is ready
-  if (document.readyState !== 'loading') hydrateIcons();
-  document.addEventListener('DOMContentLoaded', hydrateIcons);
-  window.addEventListener('load', hydrateIcons);
-})();
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+
+/* ==========================================
+FLOATING BOTTLE EFFECT
+========================================== */
+
+const bottle = document.querySelector(".hero-image img");
+
+if (bottle) {
+
+    let floatPosition = 0;
+
+    setInterval(() => {
+
+        floatPosition += 0.03;
+
+        bottle.style.transform =
+            `translateY(${Math.sin(floatPosition) * 12}px)`;
+
+    }, 30);
+
+}
+
+
+/* ==========================================
+SMOOTH ANCHOR LINKS
+========================================== */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if (!target) return;
+
+        target.scrollIntoView({
+
+            behavior: "smooth",
+            block: "start"
+
+        });
+
+    });
+
+});
+
+
+/* ==========================================
+COUNTER ANIMATION
+(Optional if numbers are added later)
+========================================== */
+
+function animateCounter(counter) {
+
+    const target = +counter.getAttribute("data-target");
+
+    const increment = target / 100;
+
+    let current = 0;
+
+    const updateCounter = () => {
+
+        if (current < target) {
+
+            current += increment;
+
+            counter.innerText = Math.ceil(current);
+
+            requestAnimationFrame(updateCounter);
+
+        } else {
+
+            counter.innerText = target;
+
+        }
+
+    };
+
+    updateCounter();
+
+}
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            animateCounter(entry.target);
+
+            counterObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+});
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
+
+});
+
+
+/* ==========================================
+PARALLAX HERO BACKGROUND
+========================================== */
+
+window.addEventListener("scroll", () => {
+
+    const scrolled = window.pageYOffset;
+
+    const hero = document.querySelector(".hero");
+
+    if (hero) {
+
+        hero.style.backgroundPositionY =
+            `${scrolled * 0.2}px`;
+
+    }
+
+});
+
+
+/* ==========================================
+PRODUCT CARD HOVER EFFECT
+========================================== */
+
+const productCards =
+    document.querySelectorAll(".product-card");
+
+productCards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateY =
+            ((x / rect.width) - 0.5) * 12;
+
+        const rotateX =
+            ((y / rect.height) - 0.5) * -12;
+
+        card.style.transform =
+            `perspective(1000px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-10px)`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform =
+            "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+
+    });
+
+});
+
+
+/* ==========================================
+TYPEWRITER EFFECT
+Hero Subtitle
+========================================== */
+
+const subtitle = document.querySelector(".hero h2");
+
+if (subtitle) {
+
+    const originalText = subtitle.innerText;
+
+    subtitle.innerText = "";
+
+    let index = 0;
+
+    function typeWriter() {
+
+        if (index < originalText.length) {
+
+            subtitle.innerText += originalText.charAt(index);
+
+            index++;
+
+            setTimeout(typeWriter, 80);
+
+        }
+
+    }
+
+    window.addEventListener("load", () => {
+
+        setTimeout(typeWriter, 700);
+
+    });
+
+}
+
+
+/* ==========================================
+SECTION ACTIVE HIGHLIGHT
+========================================== */
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+    let currentSection = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if (scrollY >= sectionTop) {
+
+            currentSection = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (
+            link.getAttribute("href") ===
+            `#${currentSection}`
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* ==========================================
+WHATSAPP BUTTON
+========================================== */
+
+function openWhatsApp() {
+
+    window.open(
+        "https://wa.me/917903083791",
+        "_blank"
+    );
+
+}
+
+
+/* ==========================================
+PAGE LOADER
+(Optional if added later)
+========================================== */
+
+window.addEventListener("load", () => {
+
+    document.body.classList.add("loaded");
+
+});
+
+
+console.log(
+    "CLEO Beverages Website Loaded Successfully"
+);
