@@ -3,322 +3,220 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#053b3a" />
+<meta name="theme-color" content="#0a192f" />
 
-<title>CLEO Beverages — Purity Reigns | Darbhanga, Bihar</title>
-<meta name="description" content="Cleo premium packaged drinking water with added minerals. Crafted in Darbhanga, Bihar. FSSAI compliant, trusted by homes and institutions." />
-
-<!-- Icons -->
-<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
-<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+<title>CLEO Beverages | Premium Drinking Water</title>
+<meta name="description" content="Cleo Premium Drinking Water. Engineered for Purity. Designed for Trust. Darbhanga, Bihar." />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 
 <!-- Lucide Icons -->
 <script src="https://unpkg.com/lucide@latest" defer></script>
 <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body data-testid="page-body">
-
-<!-- ============ PRELOADER ============ -->
-<div class="preloader" id="preloader">
-  <div class="preloader__inner">
-    <div class="preloader__drop"></div>
-    <span class="preloader__label">CLEO</span>
-  </div>
-</div>
+<body>
 
 <!-- ============ NAVIGATION ============ -->
 <header class="nav" id="nav">
-  <a href="#top" class="nav__brand" aria-label="Cleo home">
-    <span class="nav__logo">
-      <span class="nav__wordmark" style="color: #053b3a; font-weight: 600; font-size: 28px;">CLEO</span>
-    </span>
+  <a href="#top" class="nav__brand">
+    <span class="nav__logo">CLEO</span>
   </a>
 
-  <nav class="nav__links" aria-label="Primary">
-    <a href="#products">Products</a>
+  <nav class="nav__links">
+    <a href="#features">Features</a>
     <a href="#process">Purification</a>
-    <a href="#quality">Quality & Minerals</a>
+    <a href="#services">B2B & Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <a href="#contact" class="nav__cta">
-    <span>Order Now</span>
-    <i data-lucide="arrow-up-right"></i>
+    <span>Partner With Us</span>
   </a>
-
-  <button class="nav__burger" id="navBurger" aria-label="Open menu">
-    <span></span><span></span>
-  </button>
 </header>
 
 <main id="top">
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero__ambient" aria-hidden="true">
-    <div class="hero__ripple hero__ripple--1"></div>
-    <div class="hero__ripple hero__ripple--2"></div>
-    <div class="hero__ripple hero__ripple--3"></div>
-  </div>
-
+  <div class="hero__bg-glow"></div>
   <div class="hero__grid">
     <div class="hero__copy">
       <div class="eyebrow" data-reveal>
-        <span class="eyebrow__dot"></span>
-        <span>Manufactured in Darbhanga, Bihar</span>
+        <span>Har Boond Mein Vishwas</span>
       </div>
 
-      <h1 class="hero__title">
-        <span data-reveal data-delay="0">Purity</span>
-        <span data-reveal data-delay="80" class="hero__title-italic">Reigns.</span>
+      <h1 class="hero__title" data-reveal data-delay="100">
+        Engineered for <span>Purity.</span><br/>
+        Designed for <span>Trust.</span>
       </h1>
 
-      <p class="hero__lede" data-reveal data-delay="320">
-        Cleo Beverages is engineered through five rigorous stages of purification and fortified with essential minerals. Bottled with uncompromising hygiene to ensure complete premium hydration with every sip.
+      <p class="hero__lede" data-reveal data-delay="200">
+        Every drop is meticulously RO + UV + Ozone treated and mineral enriched to deliver safe, hygienic, and premium hydration[cite: 2].
       </p>
 
-      <div class="hero__cta-row" data-reveal data-delay="420">
-        <a href="#products" class="btn btn--primary">
-          View Sizes
-          <i data-lucide="arrow-down-right"></i>
-        </a>
-        <a href="#contact" class="btn btn--ghost">
-          Contact for Dealership
-        </a>
+      <div class="hero__cta-row" data-reveal data-delay="300">
+        <a href="#services" class="btn btn--primary">Explore Services</a>
+        <a href="#contact" class="btn btn--ghost">Contact Sales</a>
       </div>
-
-      <ul class="hero__stats" data-reveal data-delay="540">
-        <li>
-          <strong>05</strong>
-          <span>Purification Stages</span>
-        </li>
-        <li>
-          <strong>FSSAI</strong>
-          <span>Approved Quality</span>
-        </li>
-        <li>
-          <strong>100%</strong>
-          <span>Traceable Batches</span>
-        </li>
-      </ul>
     </div>
 
-    <div class="hero__visual" aria-hidden="true">
-      <div class="hero__bottle">
-        <!-- BOTTLE IMAGE PLACEHOLDER: Ensure you upload your blue Cleo bottle render here -->
-        <img src="assets/images/cleo-bottle-hero.png" alt="Cleo Premium Bottle" />
-      </div>
-      <div class="hero__chip hero__chip--tl">
-        <i data-lucide="droplets"></i>
-        <span>RO + UV + Ozonation</span>
-      </div>
-      <div class="hero__chip hero__chip--br">
-        <i data-lucide="shield-check"></i>
-        <span>Added Minerals</span>
-      </div>
+    <div class="hero__visual" aria-hidden="true" data-reveal data-delay="400">
+      <!-- Upload your CLEO 1L Blue bottle image here -->
+      <img src="assets/images/cleo-bottle.png" alt="Cleo Premium Drinking Water 1L" class="floating-bottle" />
     </div>
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
-<section class="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <span>Purity Reigns</span><i>◆</i><span>Added Minerals</span><i>◆</i><span>Premium Hydration</span><i>◆</i>
-    <span>Crafted in Darbhanga</span><i>◆</i><span>FSSAI Compliant</span><i>◆</i>
-    <span>Purity Reigns</span><i>◆</i><span>Added Minerals</span><i>◆</i><span>Premium Hydration</span><i>◆</i>
+<!-- ============ FEATURES ============ -->
+<section class="section features" id="features">
+  <div class="section__head center">
+    <h2 class="section__title" data-reveal>Advanced Water Safety Standards</h2>
   </div>
-</section>
-
-<!-- ============ PRODUCTS ============ -->
-<section class="section products" id="products">
-  <div class="section__head">
-    <div class="section__num" data-reveal>01 — The Range</div>
-    <h2 class="section__title" data-reveal data-delay="80">
-      Three sizes.<br/>
-      One <em>uncompromising</em> standard.
-    </h2>
-  </div>
-
-  <div class="products__grid">
-    <article class="product" data-reveal>
-      <div class="product__media">
-        <span class="product__badge">200 ml</span>
-      </div>
-      <div class="product__body">
-        <h3>Event Size</h3>
-        <p>Single-serve clarity. Perfect for weddings, conferences, and travel.</p>
-        <ul>
-          <li><span>Serving Size</span><strong>100 ml</strong></li>
-          <li><span>Servings Per Container</span><strong>2</strong></li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="product product--featured" data-reveal data-delay="80">
-      <div class="product__media">
-        <span class="product__badge" style="background: #ffffff; color: #053b3a;">500 ml</span>
-      </div>
-      <div class="product__body">
-        <h3>The Everyday</h3>
-        <p>Our most versatile size. Ideal for retail, desks, and gym bags.</p>
-        <ul>
-          <li><span>Serving Size</span><strong>100 ml</strong></li>
-          <li><span>Servings Per Container</span><strong>5</strong></li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="product" data-reveal data-delay="160">
-      <div class="product__media">
-        <span class="product__badge">1 Litre</span>
-      </div>
-      <div class="product__body">
-        <h3>The Table</h3>
-        <p>A generous volume designed for hotel tables, restaurants, and home use.</p>
-        <ul>
-          <li><span>Serving Size</span><strong>100 ml</strong></li>
-          <li><span>Servings Per Container</span><strong>10</strong></li>
-        </ul>
-      </div>
-    </article>
+  
+  <div class="features__grid">
+    <div class="feature-card glass" data-reveal>
+      <i data-lucide="droplets"></i>
+      <h3>RO + UV + Ozone</h3>
+      <p>Multi-stage treatment ensuring absolute eradication of impurities[cite: 2].</p>
+    </div>
+    <div class="feature-card glass" data-reveal data-delay="100">
+      <i data-lucide="gem"></i>
+      <h3>Mineral Enriched</h3>
+      <p>Carefully balanced essential minerals for a crisp, refreshing taste[cite: 2].</p>
+    </div>
+    <div class="feature-card glass" data-reveal data-delay="200">
+      <i data-lucide="shield-check"></i>
+      <h3>Safe & Hygienic</h3>
+      <p>Fully automated, touch-free hygienic bottling practices[cite: 2].</p>
+    </div>
+    <div class="feature-card glass" data-reveal data-delay="300">
+      <i data-lucide="award"></i>
+      <h3>Food-Grade Processing</h3>
+      <p>Batch-tested quality to maintain consistent purity in every bottle[cite: 2].</p>
+    </div>
   </div>
 </section>
 
 <!-- ============ PROCESS ============ -->
 <section class="section process" id="process">
   <div class="section__head">
-    <div class="section__num" data-reveal>02 — Purification</div>
-    <h2 class="section__title" data-reveal data-delay="80">
-      The Cleo<br/>
-      <em>Treatment Process.</em>
-    </h2>
+    <div class="eyebrow" data-reveal>From Source to Sip</div>
+    <h2 class="section__title" data-reveal>The CLEO Purification Process</h2>
+    <p class="section__sub" data-reveal>Advanced Multi-Layer Filtration for 100% Pure & Safe Drinking Water[cite: 1].</p>
   </div>
 
-  <ol class="process__list">
-    <li data-reveal>
-      <span class="process__num">01</span>
-      <div>
-        <h3>Multi-Grade Filtration</h3>
-        <p>Advanced physical filtration to strictly eliminate suspended solids and turbidity at the source.</p>
-      </div>
-      <i data-lucide="layers" class="process__ico"></i>
-    </li>
-    <li data-reveal data-delay="60">
-      <span class="process__num">02</span>
-      <div>
-        <h3>Activated Carbon Filtration</h3>
-        <p>Premium coconut-shell carbon removes chlorine, color, and organic compounds for a perfectly clean profile.</p>
-      </div>
-      <i data-lucide="atom" class="process__ico"></i>
-    </li>
-    <li data-reveal data-delay="120">
-      <span class="process__num">03</span>
-      <div>
-        <h3>RO Purification</h3>
-        <p>High-pressure Reverse Osmosis membranes effectively reduce heavy metals and dissolved impurities.</p>
-      </div>
-      <i data-lucide="aperture" class="process__ico"></i>
-    </li>
-    <li data-reveal data-delay="180">
-      <span class="process__num">04</span>
-      <div>
-        <h3>UV Sterilization</h3>
-        <p>Calibrated ultraviolet exposure neutralizes all microbial life safely and effectively without chemicals.</p>
-      </div>
-      <i data-lucide="sun" class="process__ico"></i>
-    </li>
-    <li data-reveal data-delay="240">
-      <span class="process__num">05</span>
-      <div>
-        <h3>Ozonation</h3>
-        <p>A final ozone polish guarantees long-life freshness, sanitizes the bottle, and provides a crisp finish.</p>
-      </div>
-      <i data-lucide="circle-dashed" class="process__ico"></i>
-    </li>
-  </ol>
-</section>
-
-<!-- ============ QUALITY ============ -->
-<section class="section quality" id="quality">
-  <div class="quality__grid">
-    <div class="quality__copy">
-      <div class="section__num" data-reveal>03 — Quality</div>
-      <h2 class="section__title" data-reveal data-delay="80">
-        Tested, sealed,<br/>
-        <em>fortified.</em>
-      </h2>
-      <p data-reveal data-delay="160">
-        Every batch of Cleo is fortified with carefully balanced essential minerals—Salts of Calcium (0.10% RDA), Magnesium (0.11% RDA), and Sodium (0.03% RDA)—to support daily hydration and ensure a perfectly crisp taste. 
-      </p>
-
-      <div class="quality__cards">
-        <div class="qcard" data-reveal>
-          <i data-lucide="file-badge"></i>
-          <h4>FSSAI Compliant</h4>
-          <p>Licence No. 10426310000161</p>
-        </div>
-        <div class="qcard" data-reveal data-delay="80">
-          <i data-lucide="scan-line"></i>
-          <h4>Full Traceability</h4>
-          <p>Every bottle carries a clear batch code linking directly to its production log.</p>
-        </div>
-      </div>
+  <div class="process__timeline">
+    <div class="process__step" data-reveal>
+      <div class="step-icon"><i data-lucide="cloud-rain"></i></div>
+      <h4>Raw Water Collection</h4>
+      <p>Raw water is carefully and securely collected at the source[cite: 1].</p>
+    </div>
+    <div class="process__step" data-reveal data-delay="100">
+      <div class="step-icon"><i data-lucide="filter"></i></div>
+      <h4>Multi Grade Filtration</h4>
+      <p>Removes dust, sand, and suspended particles[cite: 1].</p>
+    </div>
+    <div class="process__step" data-reveal data-delay="200">
+      <div class="step-icon"><i data-lucide="wind"></i></div>
+      <h4>Activated Carbon Filter</h4>
+      <p>Eliminates bad smells, chlorine, and unwanted color[cite: 1].</p>
+    </div>
+    <div class="process__step" data-reveal data-delay="300">
+      <div class="step-icon"><i data-lucide="search"></i></div>
+      <h4>Micron Cartridge Filter</h4>
+      <p>Ultra-fine particles are precisely filtered out[cite: 1].</p>
+    </div>
+    <div class="process__step" data-reveal data-delay="400">
+      <div class="step-icon"><i data-lucide="aperture"></i></div>
+      <h4>RO Purification</h4>
+      <p>Advanced RO technology removes harmful dissolved impurities[cite: 1].</p>
+    </div>
+    <div class="process__step" data-reveal data-delay="500">
+      <div class="step-icon"><i data-lucide="sparkles"></i></div>
+      <h4>Final Polish</h4>
+      <p>Mineral balancing, UV Sterilization, and Ozonation ensure long-lasting freshness before hygienic bottling[cite: 1].</p>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section class="section contact" id="contact">
-  <div class="contact__grid">
-    <div class="contact__copy">
-      <div class="section__num" data-reveal>04 — Contact</div>
-      <h2 class="section__title" data-reveal data-delay="80">
-        Order Cleo<br/>
-        <em>for your business.</em>
-      </h2>
-      <p data-reveal data-delay="160">
-        Currently appointing distributors and stockists. Contact us today for bulk orders and dealership inquiries.
-      </p>
+<!-- ============ SERVICES & B2B ============ -->
+<section class="section services" id="services">
+  <div class="section__head center">
+    <h2 class="section__title" data-reveal>Our B2B Business Solutions</h2>
+    <p class="section__sub" data-reveal>Reliable Supply. Premium Quality[cite: 1].</p>
+  </div>
 
-      <ul class="contact__list">
-        <li data-reveal><i data-lucide="map-pin"></i><div><span>Manufactured & Marketed By:</span><strong>Cleo Beverages<br>Ashok Paper Mill Road, Darbhanga, Bihar – 847101</strong></div></li>
-        <li data-reveal data-delay="60"><i data-lucide="phone"></i><div><span>Customer Care</span><a href="tel:+919288529001">+91-9288529001</a></div></li>
-        <li data-reveal data-delay="120"><i data-lucide="mail"></i><div><span>Email</span><a href="mailto:cleobeverages@gmail.com">cleobeverages@gmail.com</a></div></li>
+  <div class="services__grid">
+    <div class="service-block glass" data-reveal>
+      <i data-lucide="shopping-cart"></i>
+      <h3>Retail & Bulk Supply</h3>
+      <p>Regular, reliable large-scale supply for hotels, hospitals, offices, institutions, and retail shops[cite: 1].</p>
+    </div>
+    <div class="service-block glass" data-reveal data-delay="100">
+      <i data-lucide="truck"></i>
+      <h3>Distributorships</h3>
+      <p>Profitable area partnerships with on-time delivery assurance and long-term trust[cite: 1].</p>
+    </div>
+    <div class="service-block glass" data-reveal data-delay="200">
+      <i data-lucide="brush"></i>
+      <h3>Custom Branding & Private Label</h3>
+      <p>Personalized bottle labels reflecting your brand identity for businesses and special events[cite: 1].</p>
+    </div>
+  </div>
+
+  <div class="occasions-banner glass" data-reveal>
+    <h3>Customized Bottles For Every Occasion</h3>
+    <div class="occasions-list">
+      <span><i data-lucide="heart-handshake"></i> Weddings & Receptions</span>
+      <span><i data-lucide="cake"></i> Birthdays & Anniversaries</span>
+      <span><i data-lucide="briefcase"></i> Corporate Events</span>
+      <span><i data-lucide="party-popper"></i> Special Celebrations</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT & FOOTER ============ -->
+<footer class="footer" id="contact">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <h2 class="footer__logo">CLEO</h2>
+      <p class="footer__tagline">Purity Reigns.</p>
+      <p class="gstin">GSTIN: 10ALFPC8146B1ZV</p>
+    </div>
+    
+    <div class="footer__contact glass">
+      <h3>Let's Connect</h3>
+      <ul>
+        <li>
+          <i data-lucide="map-pin"></i>
+          <span>Ashok Paper Mill Road, Darbhanga, Bihar - 847101</span>
+        </li>
+        <li>
+          <i data-lucide="phone"></i>
+          <div class="phone-list">
+            <a href="tel:+919288529001">+91 9288529001</a>
+            <a href="tel:+917903083791">+91 7903083791</a>
+            <a href="tel:+916202129001">+91 6202129001</a>
+          </div>
+        </li>
+        <li>
+          <i data-lucide="mail"></i>
+          <a href="mailto:cleobeverages@gmail.com">cleobeverages@gmail.com</a>
+        </li>
+        <li>
+          <i data-lucide="globe"></i>
+          <a href="https://cleobeverages.com">cleobeverages.com</a>
+        </li>
       </ul>
     </div>
   </div>
-</section>
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="footer__grid">
-    <div class="footer__brand">
-      <div class="footer__logo">CLEO</div>
-      <p>Purity Reigns.</p>
-    </div>
-    <div class="footer__col">
-      <h5>Menu</h5>
-      <a href="#products">Products</a>
-      <a href="#process">Purification</a>
-      <a href="#quality">Quality & Minerals</a>
-    </div>
-    <div class="footer__col">
-      <h5>Reach Us</h5>
-      <a href="tel:+919288529001">+91-9288529001</a>
-      <a href="mailto:cleobeverages@gmail.com">cleobeverages@gmail.com</a>
-    </div>
-  </div>
-
+  
   <div class="footer__base">
-    <span>© <span id="year">2026</span> Cleo Beverages. All rights reserved.</span>
-    <span>Manufactured in Darbhanga, Bihar – 847101</span>
+    <p>© 2026 CLEO Beverages. Engineered For Purity. Designed For Trust.</p>
   </div>
 </footer>
 
