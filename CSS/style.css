@@ -422,15 +422,11 @@ section {
 .hero-image {
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     min-height: 650px;
 
 }
-
 
 .hero-image img {
 
@@ -441,7 +437,6 @@ section {
     object-fit: contain;
 
     filter:
-
         drop-shadow(
             0 35px 45px rgba(0,0,0,.18)
         );
