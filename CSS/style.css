@@ -419,27 +419,53 @@ section {
 }
 
 
+/* =========================
+   HERO BOTTLE IMAGE
+========================= */
+
 .hero-image {
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
-    min-height: 650px;
+
+    min-height: 720px;
+
+    padding: 20px;
 
 }
 
+
 .hero-image img {
 
-    max-height: 680px;
+    height: 720px;
 
     width: auto;
 
-    object-fit: contain;
+    max-width: 100%;
 
-    filter:
-        drop-shadow(
-            0 35px 45px rgba(0,0,0,.18)
-        );
+    object-fit: cover;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 70px rgba(7, 27, 99, 0.18);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.hero-image img:hover {
+
+    transform: scale(1.015);
+
+    box-shadow:
+        0 40px 85px rgba(7, 27, 99, 0.24);
 
 }
 
