@@ -1,337 +1,235 @@
 /* ==========================================
-CLEO BEVERAGES
-Premium Website JS
+   CLEO BEVERAGES
+   Website JavaScript
 ========================================== */
 
-/* NAVBAR SCROLL EFFECT */
+
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
 
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 50) {
+    if (!navbar) return;
 
-        navbar.style.background = "rgba(255,255,255,0.95)";
-        navbar.style.boxShadow = "0 10px 30px rgba(0,0,0,.08)";
+    if (window.scrollY > 40) {
+
+        navbar.style.background =
+            "rgba(255,255,255,0.96)";
+
+        navbar.style.boxShadow =
+            "0 10px 30px rgba(0,0,0,.08)";
 
     } else {
 
-        navbar.style.background = "rgba(255,255,255,.85)";
-        navbar.style.boxShadow = "none";
+        navbar.style.background =
+            "rgba(255,255,255,.88)";
+
+        navbar.style.boxShadow =
+            "none";
 
     }
 
 });
 
 
-/* ==========================================
-SCROLL REVEAL ANIMATION
-========================================== */
+/* =========================
+   SCROLL REVEAL
+========================= */
 
-const revealElements = document.querySelectorAll(`
-.hero-content,
-.hero-image,
-.section-header,
-.about-content,
-.stat-card,
-.product-card,
-.timeline div,
-.why-card,
-.b2b-grid div,
-.private-label,
-.facility img,
-.dealership,
-.contact-grid div
-`);
+const revealElements =
+    document.querySelectorAll(`
 
-const revealOnScroll = () => {
+        .hero-content,
+        .hero-image,
+        .section-header,
+        .about-content,
+        .stat-card,
+        .product-showcase,
+        .timeline div,
+        .why-card,
+        .b2b-grid div,
+        .private-label,
+        .factory-placeholder,
+        .dealership,
+        .contact-grid div
 
-    revealElements.forEach((element) => {
+    `);
 
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
 
-        if (elementTop < windowHeight - 100) {
+const revealObserver =
+    new IntersectionObserver(
 
-            element.classList.add("show");
+        (entries) => {
 
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
         }
 
-    });
-
-};
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+    );
 
 
-/* ==========================================
-FLOATING BOTTLE EFFECT
-========================================== */
+revealElements.forEach(element => {
 
-const bottle = document.querySelector(".hero-image img");
-
-if (bottle) {
-
-    let floatPosition = 0;
-
-    setInterval(() => {
-
-        floatPosition += 0.03;
-
-        bottle.style.transform =
-            `translateY(${Math.sin(floatPosition) * 12}px)`;
-
-    }, 30);
-
-}
-
-
-/* ==========================================
-SMOOTH ANCHOR LINKS
-========================================== */
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        const target = document.querySelector(
-            this.getAttribute("href")
-        );
-
-        if (!target) return;
-
-        target.scrollIntoView({
-
-            behavior: "smooth",
-            block: "start"
-
-        });
-
-    });
+    revealObserver.observe(element);
 
 });
 
 
-/* ==========================================
-COUNTER ANIMATION
-(Optional if numbers are added later)
-========================================== */
+/* =========================
+   PRODUCT CARD / BOTTLE
+========================= */
 
-function animateCounter(counter) {
+const productImage =
+    document.querySelector(".product-image img");
 
-    const target = +counter.getAttribute("data-target");
 
-    const increment = target / 100;
+if (productImage) {
 
-    let current = 0;
+    productImage.addEventListener(
+        "mouseenter",
+        () => {
 
-    const updateCounter = () => {
-
-        if (current < target) {
-
-            current += increment;
-
-            counter.innerText = Math.ceil(current);
-
-            requestAnimationFrame(updateCounter);
-
-        } else {
-
-            counter.innerText = target;
+            productImage.style.transform =
+                "translateY(-10px) scale(1.03)";
 
         }
+    );
 
-    };
 
-    updateCounter();
+    productImage.addEventListener(
+        "mouseleave",
+        () => {
 
-}
-
-const counters = document.querySelectorAll(".counter");
-
-const counterObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            animateCounter(entry.target);
-
-            counterObserver.unobserve(entry.target);
+            productImage.style.transform =
+                "translateY(0) scale(1)";
 
         }
-
-    });
-
-});
-
-counters.forEach(counter => {
-
-    counterObserver.observe(counter);
-
-});
-
-
-/* ==========================================
-PARALLAX HERO BACKGROUND
-========================================== */
-
-window.addEventListener("scroll", () => {
-
-    const scrolled = window.pageYOffset;
-
-    const hero = document.querySelector(".hero");
-
-    if (hero) {
-
-        hero.style.backgroundPositionY =
-            `${scrolled * 0.2}px`;
-
-    }
-
-});
-
-
-/* ==========================================
-PRODUCT CARD HOVER EFFECT
-========================================== */
-
-const productCards =
-    document.querySelectorAll(".product-card");
-
-productCards.forEach(card => {
-
-    card.addEventListener("mousemove", (e) => {
-
-        const rect = card.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const rotateY =
-            ((x / rect.width) - 0.5) * 12;
-
-        const rotateX =
-            ((y / rect.height) - 0.5) * -12;
-
-        card.style.transform =
-            `perspective(1000px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             translateY(-10px)`;
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform =
-            "perspective(1000px) rotateX(0deg) rotateY(0deg)";
-
-    });
-
-});
-
-
-/* ==========================================
-TYPEWRITER EFFECT
-Hero Subtitle
-========================================== */
-
-const subtitle = document.querySelector(".hero h2");
-
-if (subtitle) {
-
-    const originalText = subtitle.innerText;
-
-    subtitle.innerText = "";
-
-    let index = 0;
-
-    function typeWriter() {
-
-        if (index < originalText.length) {
-
-            subtitle.innerText += originalText.charAt(index);
-
-            index++;
-
-            setTimeout(typeWriter, 80);
-
-        }
-
-    }
-
-    window.addEventListener("load", () => {
-
-        setTimeout(typeWriter, 700);
-
-    });
-
-}
-
-
-/* ==========================================
-SECTION ACTIVE HIGHLIGHT
-========================================== */
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 150;
-
-        if (scrollY >= sectionTop) {
-
-            currentSection = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (
-            link.getAttribute("href") ===
-            `#${currentSection}`
-        ) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/* ==========================================
-WHATSAPP BUTTON
-========================================== */
-
-function openWhatsApp() {
-
-    window.open(
-        "https://wa.me/917903083791",
-        "_blank"
     );
 
 }
 
 
-/* ==========================================
-PAGE LOADER
-(Optional if added later)
-========================================== */
+/* =========================
+   SMOOTH ANCHOR LINKS
+========================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(anchor => {
+
+        anchor.addEventListener(
+            "click",
+            function (event) {
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+
+                if (!target) return;
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
+            }
+        );
+
+    });
+
+
+/* =========================
+   ACTIVE NAVIGATION
+========================= */
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+
+const navLinks =
+    document.querySelectorAll("nav a");
+
+
+const sectionObserver =
+    new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting)
+                    return;
+
+
+                const id =
+                    entry.target.getAttribute("id");
+
+
+                navLinks.forEach(link => {
+
+                    link.classList.remove("active");
+
+
+                    if (
+                        link.getAttribute("href") ===
+                        `#${id}`
+                    ) {
+
+                        link.classList.add("active");
+
+                    }
+
+                });
+
+            });
+
+        },
+
+        {
+            rootMargin: "-30% 0px -60% 0px"
+        }
+
+    );
+
+
+sections.forEach(section => {
+
+    sectionObserver.observe(section);
+
+});
+
+
+/* =========================
+   PAGE LOADED
+========================= */
 
 window.addEventListener("load", () => {
 
